@@ -1,0 +1,6 @@
+FTDI232 side        esp32-cam side 
+            tx -> rx
+            rx -> tx
+            5V -> 5V
+            GND -> GND
+
