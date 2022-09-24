@@ -1,3 +1,13 @@
+ESP32 CAM AI-THINKER BOARD
+https://microcontrollerslab.com/esp32-cam-ai-thinker-pinout-gpio-pins-features-how-to-program/
+
+
+**********  Download FTDI driver in windows 11. **********************
+
+FTDI cable intro:
+https://microcontrollerslab.com/ftdi-usb-to-serial-converter-cable-use-linux-windows/
+
+
 FTDI232 side        esp32-cam side 
             tx -> rx
             rx -> tx
