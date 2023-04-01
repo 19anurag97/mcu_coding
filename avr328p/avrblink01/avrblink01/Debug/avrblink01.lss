@@ -21,11 +21,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_frame  00000054  00000000  00000000  000013f4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000003c0  00000000  00000000  00001448  2**0
+  9 .debug_str    000003b9  00000000  00000000  00001448  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000000ba  00000000  00000000  00001808  2**0
+ 10 .debug_loc    000000ba  00000000  00000000  00001801  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000028  00000000  00000000  000018c2  2**0
+ 11 .debug_ranges 00000028  00000000  00000000  000018bb  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -119,7 +119,7 @@ Disassembly of section .text:
 int main(void)
 {
 	//function1();
-/*	function2();*/
+	//function2();
 	function3();
   b0:	0e 94 40 00 	call	0x80	; 0x80 <function3>
 

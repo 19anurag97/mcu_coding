@@ -4,6 +4,7 @@
  * Created: 11-02-2023 11:46:01
  * Author : 19anu
  */ 
+
 #define F_CPU 8000000UL
 #define direction_D		*((volatile uint8_t*)0x2A)
 #define port_D			*((volatile uint8_t*)0x2B)
@@ -13,14 +14,14 @@
 #include <util/delay.h>
 #include <stdint.h>
 
-void function1(void);//blink using delay in util/delay.h
+void function1(void);	//blink using delay in util/delay.h
 void function2(void);
-void function3(void);
+void function3(void);	//MACROS define
 
 int main(void)
 {
 	//function1();
-/*	function2();*/
+	//function2();
 	function3();
 }
 
@@ -55,13 +56,6 @@ void function2(void)
 
 void function3(void)
 {
-	//0x0B (0x2B) PORTD
-	//0x0A (0x2A) DDRD
-	//0x09 (0x29) PIND
-// 	volatile uint8_t* direction_D = (volatile uint8_t*)0x2A;
-// 	volatile uint8_t* port_D = (volatile uint8_t*)0x2B;
-	//MACROS define
-	
 	direction_D = 1;
 	while (1)
 	{
