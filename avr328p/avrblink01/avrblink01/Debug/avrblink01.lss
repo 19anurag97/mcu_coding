@@ -72,10 +72,10 @@ Disassembly of section .text:
   7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 00000080 <function3>:
-	//0x0A (0x2A) DDRD
 	//0x09 (0x29) PIND
 // 	volatile uint8_t* direction_D = (volatile uint8_t*)0x2A;
 // 	volatile uint8_t* port_D = (volatile uint8_t*)0x2B;
+	//MACROS define
 	
 	direction_D = 1;
   80:	81 e0       	ldi	r24, 0x01	; 1
