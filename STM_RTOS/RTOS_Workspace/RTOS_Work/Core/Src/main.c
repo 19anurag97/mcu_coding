@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,7 +50,8 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-
+static void task1_handler(void *params);
+static void task2_handler(void *params);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -65,7 +67,10 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	TaskHandle_t task1_handle;
+	TaskHandle_t task2_handle;
 
+	BaseType_t status;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -87,6 +92,11 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+  status = xTaskCreate(task1_handler, "Task-1", 200, "Hello From Task1", 2, &task1_handle);
+  configASSERT(status);
+
+  status = xTaskCreate(task2_handler, "Task-2", 200, "Hello From Task2", 2, &task2_handle);
+  configASSERT(status);
 
   /* USER CODE END 2 */
 
@@ -292,6 +302,15 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+static void task1_handler(void *params)
+{
+
+}
+
+static void task2_handler(void *params)
+{
+
+}
 
 /* USER CODE END 4 */
 
@@ -334,7 +353,7 @@ void Error_Handler(void)
 
 #ifdef  USE_FULL_ASSERT
 /**
-  * @brief  Reports the name of the source file and the source line number
+  * @brief  Reports the name of the source file and the source line number4
   *         where the assert_param error has occurred.
   * @param  file: pointer to the source file name
   * @param  line: assert_param error line source number
